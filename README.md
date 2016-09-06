@@ -1,2 +1,4 @@
 # bowo-self-training
-my self training repo
+My self-training repository.
+
+Probably this will contains my Mitrais CDC codes.
