@@ -3,8 +3,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HWApp
 {
-    public class HelloWorldController
+    public class HelloWorldController : Controller
     {
+        [HttpGet("helloworld")]
+        public ActionResult HelloWorldMvc()
+        {
+            ViewBag.Message = "Hello World from MVC!!";
+            ViewBag.Time = DateTime.Now;
+
+            return View("helloworld");
+            //return View("~/helloworld.cshtml");           
+        }
+
         [HttpGet("api/helloworld")]
         public object HelloWorld()
         {
