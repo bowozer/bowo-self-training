@@ -1,12 +1,20 @@
-﻿using System;
+﻿using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
-namespace ConsoleApplication
+namespace HWApp
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World! Time is " + DateTime.Now.ToString("t"));            
+
+            var host = new WebHostBuilder()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseKestrel()
+                .UseStartup<HWStartup>()
+                .Build();
+
+            host.Run();
         }
     }
 }
