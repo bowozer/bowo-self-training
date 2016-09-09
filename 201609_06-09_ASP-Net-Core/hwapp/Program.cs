@@ -9,8 +9,10 @@ namespace HWApp
         {
 
             var host = new WebHostBuilder()
-                .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseUrls()
+                .UseIISIntegration()
                 .UseStartup<HWStartup>()
                 .Build();
 
