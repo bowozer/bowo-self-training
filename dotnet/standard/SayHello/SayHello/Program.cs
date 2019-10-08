@@ -6,9 +6,12 @@ namespace SayHello
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("\nWhat is your name?");
+            string name = Console.ReadLine();
+            DateTime date = DateTime.Now;
+            Console.WriteLine($"\nHello, {name}, on {date:d} at {date:t}!");
 
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("\nPress any key to exit...");
             Console.Read();
         }
     }
